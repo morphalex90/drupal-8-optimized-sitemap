@@ -53,22 +53,17 @@ class Options extends ConfigFormBase {
 		foreach ($nodeFields as $key => $nodeField) {
 			
 			if($nodeField->getType() == 'image'){
-				#drupal_set_message('description: '.$nodeField->getDescription());
-				#drupal_set_message('label: '.$nodeField->getLabel());
-				
+
 				$form['node']['field_'.$nodeField->id()] = array(
 				  '#type' => 'checkbox',
 				  '#title' => $this->t($nodeType->label().' -> '.$nodeField->getLabel()),
 				  '#default_value' => $config->get('field_'.$nodeField->id())
 				);
 			}
-			
-		}
+		}	
 	}
-
-
 	
-	
+
     return parent::buildForm($form, $form_state);
   }
 
