@@ -1,0 +1,7 @@
+name: Optimized Sitemap
+type: module
+description: A better sitemap xml module
+core: 8.x
+package: morphalex90
+configure: optimized_sitemap.collection
+

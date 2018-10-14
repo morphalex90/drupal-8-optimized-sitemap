@@ -1,0 +1,9 @@
+optimized_sitemap.admin: # Options
+  route_name: optimized_sitemap.collection  
+  title: 'Options'
+  base_route: optimized_sitemap.collection
+optimized_sitemap.settings: # Additional settings
+  route_name: optimized_sitemap.settings
+  title: 'Additional settings'
+  base_route: optimized_sitemap.collection
+  weight: 100

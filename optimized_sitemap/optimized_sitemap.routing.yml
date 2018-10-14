@@ -1,0 +1,14 @@
+optimized_sitemap.collection:
+  path: '/admin/config/search/optimized_sitemap'
+  defaults:
+    _form: '\Drupal\optimized_sitemap\Form\Options'
+    _title: 'Optimized Meta'
+  requirements:
+    _permission: 'administer site configuration'
+optimized_sitemap.settings:
+  path: '/admin/config/search/optimized_sitemap/config'
+  defaults:
+    _form: '\Drupal\optimized_sitemap\Form\AdditionalSettings'
+    _title: 'Optimized Meta additional settings'
+  requirements:
+    _permission: 'administer site configuration'
