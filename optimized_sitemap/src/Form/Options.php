@@ -3,6 +3,7 @@ namespace Drupal\optimized_sitemap\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
+#use Drupal\Core\Entity\EntityTypeBundleInfoInterface;
 
 /**
  * Configure example settings for this site.
@@ -29,9 +30,17 @@ class Options extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('optimized_sitemap.options');
+	
+	// oer caricarne solo una \Drupal::entityManager()->getBundleInfo($entity_type);
+	
+	#$entityTypes = \Drupal\Core\Entity\EntityTypeBundleInfoInterface::getAllBundleInfo(); // new and not deprecated but needs work
+	$entityTypes = \Drupal::entityManager()->getAllBundleInfo(); // get all entities types
+	foreach($entityTypes as $key => $entityType){
+		drupal_set_message('test: '.$key);
+	}
 
 	## Nodes container
-    $form['node'] = array(
+    /*$form['node'] = array(
       '#type' => 'details',
       '#title' => $this->t('Enable sitemap for node types'),
       '#open' => TRUE
@@ -61,7 +70,7 @@ class Options extends ConfigFormBase {
 				);
 			}
 		}	
-	}
+	}*/
 	
 
     return parent::buildForm($form, $form_state);
