@@ -36,7 +36,7 @@ class Options extends ConfigFormBase {
 	#$entityTypes = \Drupal\Core\Entity\EntityTypeBundleInfoInterface::getAllBundleInfo(); // new and not deprecated but needs work
 	$entityTypes = \Drupal::entityManager()->getAllBundleInfo(); // get all entities types
 	foreach($entityTypes as $key => $entityType){
-		drupal_set_message('test: '.$key);
+		drupal_set_message($key);
 	}
 
 	## Nodes container
